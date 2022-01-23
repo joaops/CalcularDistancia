@@ -1,0 +1,60 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: g++.exe Windows 10 x64",
+			"command": "C:/msys64/mingw64/bin/g++.exe",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-std=c++17",
+				// "-g",
+				"${file}",
+				"-O3",
+				"-I",
+                "C:/msys64/mingw64/include",
+                "-I",
+                "${workspaceFolder}/deps/dlib/include",
+                "-I",
+                "${workspaceFolder}/deps/dlib/include/dlib/external/libpng",
+                "-I",
+                "${workspaceFolder}/deps/dlib/include/dlib/external/libjpeg",
+                "-L",
+                "${workspaceFolder}/deps/dlib/lib",
+                "-l",
+                "dlib",
+				"-l",
+                "ws2_32",
+				"-l",
+                "winmm",
+				"-l",
+                "comctl32",
+				"-l",
+                "gdi32",
+				"-l",
+                "imm32",
+				"-L",
+				"C:/Program Files/OpenBLAS/lib",
+				"-l",
+				"openblas",
+				"-D",
+                "DLIB_PNG_SUPPORT",
+                "-D",
+                "DLIB_JPEG_SUPPORT",
+				"-o",
+				"${fileDirname}/build/${fileBasenameNoExtension}.exe"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compilador: C:\\msys64\\mingw64\\bin\\g++.exe"
+		}
+	]
+}
